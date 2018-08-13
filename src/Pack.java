@@ -9,7 +9,7 @@ public class Pack {
         Utils.Suits suitArray[] = Utils.Suits.values();
         Utils.Pip pipArray[]=Utils.Pip.values();
         for(int i=1;i<suitArray.length;i++)
-            for(int j=1;j<pipArray.length;i++)
+            for(int j=1;j<pipArray.length;j++)
                 cards.add(new Card(suitArray[i],pipArray[j]));
         cards.add(new Card(suitArray[0],pipArray[0]));
         cards.add(new Card(suitArray[0],pipArray[0]));
