@@ -20,4 +20,15 @@ public class Card {
         isWildCard = wildCard;
     }
 
+    public Utils.Suits getSuit() {
+        return suit;
+    }
+
+    public Utils.Pip getPip() {
+        return pip;
+    }
+
+    public boolean isWildCard() {
+        return isWildCard;
+    }
 }
