@@ -7,7 +7,8 @@ public class Main {
         d1.shuffle();
         System.out.println(d1.allCards);
         d1.deal(25);
-
+        d1.setWildCard(Utils.Pip.valueOf("Three"));
+        System.out.println(d1.allCards);
     }
 
 }
