@@ -37,7 +37,7 @@ public class Deck {
 
     public List<List<Card>> deal(int numberOfPlayers, int cardsPerPlayer){
         if(cardsPerPlayer*numberOfPlayers>allCards.size())
-            return NULL;
+            return null;
         this.shuffle();
         List<List<Card>> gameSet=new ArrayList<List<Card>>();
         Iterator<Card> iter=allCards.iterator();
@@ -64,6 +64,25 @@ public class Deck {
         cards.add(new Card(suitArray[0],pipArray[0]));
         cards.add(new Card(suitArray[0],pipArray[0]));
         return cards;
+    }
+
+    public void setWildCard(Utils.Pip pip) {
+        for(Card card : allCards) {
+            if(card.getPip().equals(pip)) {
+                card.setWildCard(true);
+            }
+        }
+    }
+
+    public void setWildCard(List<Card> wildCards) {
+        for( Card wildC : wildCards) {
+            for (Card card : allCards) {
+                if(card.equals(wildC)) {
+                    card.setWildCard(true);
+                    break;
+                }
+            }
+        }
     }
 
 }
