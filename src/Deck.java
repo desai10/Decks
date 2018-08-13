@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+
 public class Deck {
     List<Card> allCards=new ArrayList<Card>();
 
@@ -26,4 +25,24 @@ public class Deck {
             break;
         }
     }
+
+    public void shuffle(){
+        Collections.shuffle(allCards);
+    }
+
+    public List<List<Card>> deal(int numberOfPlayers){
+        //this.shuffle();
+        List<List<Card>> gameSet=new ArrayList<List<Card>>();
+        for(int i=0; i<numberOfPlayers; i++)
+            gameSet.add(new ArrayList<Card>());
+        int player=0;
+        Iterator<Card> iter=allCards.iterator();
+        while(iter.hasNext()){
+            gameSet.get(player).add(iter.next());
+            player=(player+1)%numberOfPlayers;
+        }
+        System.out.println(gameSet);
+        return gameSet;
+    }
+
 }

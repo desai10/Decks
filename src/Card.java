@@ -23,6 +23,15 @@ public class Card {
         isWildCard = wildCard;
     }
 
+    @Override
+    public String toString() {
+        return "Card{" +
+                "suit=" + suit +
+                ", pip=" + pip +
+                ", isWildCard=" + isWildCard +
+                '}';
+    }
+
     public Utils.Suits getSuit() {
         return suit;
     }
