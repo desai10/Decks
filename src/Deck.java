@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Deck {
     List<Card> allCards=new ArrayList<Card>();
+    List<Card> dealtCards = new ArrayList<>();
 
     Deck(int numberOfPacks){
         while(numberOfPacks--!=0)
@@ -30,6 +31,11 @@ public class Deck {
         Collections.shuffle(allCards);
     }
 
+    public void resetDeck() {
+        allCards.addAll(dealtCards);
+        dealtCards.clear();
+    }
+
     public List<List<Card>> deal(int numberOfPlayers){
         this.shuffle();
         List<List<Card>> gameSet=new ArrayList<List<Card>>();
@@ -42,6 +48,10 @@ public class Deck {
             player=(player+1)%numberOfPlayers;
         }
         System.out.println(gameSet);
+        for(List<Card> listCard : gameSet) {
+            allCards.removeAll(listCard);
+            dealtCards.addAll(listCard);
+        }
         return gameSet;
     }
 
@@ -61,6 +71,10 @@ public class Deck {
             }
         }
         System.out.println(gameSet);
+        for(List<Card> listCard : gameSet) {
+            allCards.removeAll(listCard);
+            dealtCards.addAll(listCard);
+        }
         return gameSet;
     }
 
