@@ -6,7 +6,7 @@ public class Main {
         System.out.println(d1.allCards);
         d1.shuffle();
         System.out.println(d1.allCards);
-        d1.deal(54);
+        d1.deal(25);
 
     }
 
