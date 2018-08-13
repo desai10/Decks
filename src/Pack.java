@@ -9,4 +9,8 @@ public class Pack {
             for(Utils.Pip pip : Utils.Pip.values())
                 cards.add(new Card(suit,pip));
     }
+
+    public List<Card> getCards() {
+        return cards;
+    }
 }
