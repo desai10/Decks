@@ -31,8 +31,18 @@ public class Deck {
     }
 
     public List<List<Card>> deal(int numberOfPlayers){
-        int cardsPerPlayer=allCards.size()/numberOfPlayers;
-        return deal(numberOfPlayers, cardsPerPlayer);
+        this.shuffle();
+        List<List<Card>> gameSet=new ArrayList<List<Card>>();
+        Iterator<Card> iter=allCards.iterator();
+        for(int i=0; i<numberOfPlayers; i++)
+            gameSet.add(new ArrayList<Card>());
+        int player=0;
+        while(iter.hasNext()){
+            gameSet.get(player).add(iter.next());
+            player=(player+1)%numberOfPlayers;
+        }
+        System.out.println(gameSet);
+        return gameSet;
     }
 
     public List<List<Card>> deal(int numberOfPlayers, int cardsPerPlayer){
