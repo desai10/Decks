@@ -4,6 +4,9 @@ public class Card {
     Utils.Pip pip;
     boolean isWildCard;
 
+    static CardSequenceComparator cardSequenceComparator = new CardSequenceComparator();
+    static CardRankComparator cardRankComparator = new CardRankComparator();
+
     public Card(String suit, String pip) {
         this.suit = Utils.Suits.valueOf(suit);
         this.pip = Utils.Pip.valueOf(pip);
@@ -31,4 +34,13 @@ public class Card {
     public boolean isWildCard() {
         return isWildCard;
     }
+
+    public static CardSequenceComparator getCardSequenceComparator() {
+        return cardSequenceComparator;
+    }
+
+    public static CardRankComparator getCardRankComparator() {
+        return cardRankComparator;
+    }
+
 }
